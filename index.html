@@ -17,7 +17,9 @@
             </div>
             <div>
                 <ul>
-                    <li>ciao <span class="delete">&Cross;</span></li>
+                    <li :class="todo.done === true ? 'done' : ''" v-for="(todo, index) in todos" :key="index">
+                        {{todo.text}}<span class="delete">&Cross;</span>
+                    </li>
                 </ul>
                 
             </div>
