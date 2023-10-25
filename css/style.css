@@ -12,3 +12,7 @@
 .delete {
     position: absolute;
 }
+
+.done {
+    text-decoration: line-through;
+}
