@@ -17,14 +17,17 @@
                 <button class="btn btn-outline-success" @click="addTask()">Aggiungi</button>
             </div>
             <div>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center" 
+                <ul v-if="todos.length > 0" class="list-group">
+                    <li style="cursor: pointer;" class="list-group-item list-group-item-success d-flex justify-content-between align-items-center" 
                     :class="todo.done === true ? 'list-group-item-danger text-decoration-line-through' : ''" 
-                    v-for="(todo, index) in todos" :key="index">
+                    v-for="(todo, index) in todos" :key="index" @click="taskDone(index)">
                         {{todo.text}}
-                        <span class="delete" @click="todos.splice(index, 1)">&Cross;</span>
+                        <span class="delete" @click.stop="todos.splice(index, 1)">&Cross;</span>
                     </li>
                 </ul>
+                <div v-else>
+                    <p>Non ci sono task da fare!!!!!!!!</p>
+                </div>
             </div>
         </div>
 
