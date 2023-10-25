@@ -5,6 +5,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
+            newTask: '',
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -21,8 +22,15 @@ createApp({
             ]
         }
     },
-    methoh(){
-
+    methods: {
+        addTask() {
+            if (this.newTask !== '') {
+                this.todos.push({
+                    text: this.newTask,
+                    done: false,
+                })   
+            }
+        }
     },
 
     mounted(){
