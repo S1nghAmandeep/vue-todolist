@@ -6,6 +6,7 @@ createApp({
     data(){
         return {
             newTask: '',
+            error: false,
             todos: [
                 {
                     text: 'Fare i compiti',
@@ -24,11 +25,14 @@ createApp({
     },
     methods: {
         addTask() {
-            if (this.newTask.trim() !== '') {
+            this.error = false;
+            if (this.newTask.trim().length >= 5) {
                 this.todos.push({
                     text: this.newTask,
                     done: false,
                 })   
+            } else {
+                this.error = true;
             }
             this.newTask = '';
         },
