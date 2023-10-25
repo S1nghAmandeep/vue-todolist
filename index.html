@@ -12,17 +12,19 @@
     <div id="app">
         <div class="container-my addtask-body">
             <div class="add-task">
-                <label class="title-todos" for="">Inserisci cose da fare</label>
-                <input class="form-control" @keyup.enter="addTask()" type="text" v-model="newTask">
+                <label class="title-todos" for="">Todo List</label>
+                <input class="form-control" placeholder="Inserisci cose da fare" @keyup.enter="addTask()" type="text" v-model="newTask">
                 <button class="btn btn-outline-success" @click="addTask()">Aggiungi</button>
             </div>
             <div>
-                <ul class="list-group ">
-                    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center" :class="todo.done === true ? 'list-group-item-danger text-decoration-line-through' : ''" v-for="(todo, index) in todos" :key="index">
-                        {{todo.text}}<span class="delete" @click="todos.splice(index, 1)">&Cross;</span>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center" 
+                    :class="todo.done === true ? 'list-group-item-danger text-decoration-line-through' : ''" 
+                    v-for="(todo, index) in todos" :key="index">
+                        {{todo.text}}
+                        <span class="delete" @click="todos.splice(index, 1)">&Cross;</span>
                     </li>
                 </ul>
-                
             </div>
         </div>
 
