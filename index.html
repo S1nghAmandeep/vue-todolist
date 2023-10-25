@@ -12,13 +12,13 @@
     <div id="app">
         <div class="container-my addtask-body">
             <div class="add-task">
-                <label for="">Inserisci cose fare</label>
+                <label class="title-todos" for="">Inserisci cose da fare</label>
                 <input class="form-control" @keyup.enter="addTask()" type="text" v-model="newTask">
                 <button class="btn btn-outline-success" @click="addTask()">Aggiungi</button>
             </div>
             <div>
                 <ul class="list-group ">
-                    <li class="list-group-item d-flex justify-content-between align-items-center" :class="todo.done === true ? 'list-group-item disabled' : ''" v-for="(todo, index) in todos" :key="index">
+                    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center" :class="todo.done === true ? 'list-group-item-danger text-decoration-line-through' : ''" v-for="(todo, index) in todos" :key="index">
                         {{todo.text}}<span class="delete" @click="todos.splice(index, 1)">&Cross;</span>
                     </li>
                 </ul>
