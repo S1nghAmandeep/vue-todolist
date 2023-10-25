@@ -17,6 +17,15 @@
     align-items: center;
 }
 
+.title-todos {
+    background-color: rgb(43, 93, 255);
+    border-radius: 10px;
+    color: white;
+    width: 250px;
+    padding: 0 20px;
+    text-align: center;
+}
+
 .add-task {
     display: flex;
     gap: 20px;
@@ -28,8 +37,9 @@
 }
 
 .delete {
-    /* padding-left: 50px; */
-    text-align: left;
+   font-size: 20px;
+   margin-left: 50px;
+   cursor: pointer;
 
 }
 
