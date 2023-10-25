@@ -30,6 +30,7 @@ createApp({
                     done: false,
                 })   
             }
+            this.newTask = ''
         }
     },
 
