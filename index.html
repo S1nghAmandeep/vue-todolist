@@ -18,7 +18,7 @@
             <div>
                 <ul>
                     <li :class="todo.done === true ? 'done' : ''" v-for="(todo, index) in todos" :key="index">
-                        {{todo.text}}<span class="delete">&Cross;</span>
+                        {{todo.text}}<span class="delete" @click="todos.splice(index, 1)">&Cross;</span>
                     </li>
                 </ul>
                 
