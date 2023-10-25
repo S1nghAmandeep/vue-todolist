@@ -12,8 +12,8 @@
         <div class="container">
             <div>
                 <label for="">Inserisci cosa fare</label>
-                <input type="text">
-                <button>Aggiungi</button>
+                <input type="text" v-model="newTask">
+                <button @click="addTask()">Aggiungi</button>
             </div>
             <div>
                 <ul>
