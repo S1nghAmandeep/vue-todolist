@@ -24,13 +24,17 @@ createApp({
     },
     methods: {
         addTask() {
-            if (this.newTask !== '') {
+            if (this.newTask.trim() !== '') {
                 this.todos.push({
                     text: this.newTask,
                     done: false,
                 })   
             }
             this.newTask = '';
+        },
+
+        taskDone(taskIndex){
+            this.todos[taskIndex].done = !this.todos[taskIndex].done;
         }
     },
 
